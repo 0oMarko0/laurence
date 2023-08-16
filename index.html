@@ -31,9 +31,18 @@
     .ml {
       margin-left: 0.5rem;
     }
+
+    .firework-container {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
   </style>
 
   <body>
+    <div id="fireworks" class="firework-container"></div>
     <div class="content">
       <div>
         <div class="row">
@@ -56,6 +65,66 @@
       </div>
     </div>
   </body>
+
+  <script src="https://unpkg.com/fireworks-js@2.x/dist/index.umd.js"></script>
+
+  <!-- Usage -->
+  <script>
+    const container = document.getElementById('fireworks')
+    const fireworks = new Fireworks.default(container)
+    fireworks.updateOptions(
+      {
+        autoresize: true,
+        opacity: 0.5,
+        acceleration: 1.00,
+        friction: 0.97,
+        gravity: 1.5,
+        particles: 50,
+        traceLength: 3,
+        traceSpeed: 5,
+        explosion: 2,
+        intensity: 15,
+        flickering: 50,
+        lineStyle: 'round',
+        hue: {
+          min: 139,
+          max: 215
+        },
+        delay: {
+          min: 70,
+          max: 100
+        },
+        rocketsPoint: {
+          min: 50,
+          max: 50
+        },
+        lineWidth: {
+          explosion: {
+            min: 1,
+            max: 1.5
+          },
+          trace: {
+            min: 1,
+            max: 1.5
+          }
+        },
+        brightness: {
+          min: 50,
+          max: 80
+        },
+        decay: {
+          min: 0.005,
+          max: 0.02
+        },
+        mouse: {
+          click: false,
+          move: false,
+          max: 1
+        }
+      }
+    )
+    fireworks.start()
+  </script>
 
   <script>
     const countDownDate = new Date(2023, 7, 18, 15, 15).getTime();
