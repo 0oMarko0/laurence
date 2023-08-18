@@ -134,15 +134,6 @@
     const MS_PER_DAY = MS_PER_HOURS * 24;
 
     function updateDate(elements) {
-      const now = new Date().getTime();
-
-      const distance = countDownDate - now;
-
-      const days = Math.floor(distance / MS_PER_DAY);
-      const hours = Math.floor((distance % MS_PER_DAY) / MS_PER_HOURS);
-      const minutes = Math.floor((distance % MS_PER_HOURS) / MS_PER_MINUTES);
-      const seconds = Math.floor((distance % MS_PER_MINUTES) / MS_PER_SECONDS);
-
       elements.days.innerHTML = "0";
       elements.hours.innerHTML = "0";
       elements.minutes.innerHTML = "0";
