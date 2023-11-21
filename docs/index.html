@@ -1,4 +1,4 @@
-<!doctype html>d
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -24,14 +24,6 @@
       height: 90vh;
     }
 
-    .row {
-      display: flex;
-    }
-
-    .ml {
-      margin-left: 0.5rem;
-    }
-
     .firework-container {
       position: fixed;
       left: 0;
@@ -44,24 +36,8 @@
   <body>
     <div id="fireworks" class="firework-container"></div>
     <div class="content">
-      <div>
-        <div class="row">
-          <div id="days"></div>
-          <div class="ml">Days</div>
-        </div>
-        <div class="row">
-          <div id="hours"></div>
-          <div class="ml">Hours</div>
-        </div>
-        <div class="row">
-          <div id="minutes"></div>
-          <div class="ml">Minutes</div>
-        </div>
-        <div class="row">
-          <div id="seconds"></div>
-          <div class="ml">Seconds</div>
-        </div>
-        <div>Before Laurence is back</div>
+      <div style="font-size: 50px; font-weight: bold">
+        Je t'aime
       </div>
     </div>
   </body>
@@ -124,27 +100,5 @@
       }
     )
     fireworks.start()
-  </script>
-
-  <script>
-    const countDownDate = new Date(2023, 7, 18, 15, 15).getTime();
-    const MS_PER_SECONDS = 1000;
-    const MS_PER_MINUTES = MS_PER_SECONDS * 60;
-    const MS_PER_HOURS = MS_PER_MINUTES * 60;
-    const MS_PER_DAY = MS_PER_HOURS * 24;
-
-    function updateDate(elements) {
-      elements.days.innerHTML = "0";
-      elements.hours.innerHTML = "0";
-      elements.minutes.innerHTML = "0";
-      elements.seconds.innerHTML = "0";
-    }
-
-    window.setInterval(() => updateDate({
-      days: document.getElementById('days'),
-      hours: document.getElementById('hours'),
-      minutes: document.getElementById('minutes'),
-      seconds: document.getElementById('seconds'),
-    }), 1000);
   </script>
 </html>
